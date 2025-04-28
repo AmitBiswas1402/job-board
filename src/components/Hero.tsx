@@ -11,14 +11,14 @@ export default function Hero() {
   const posts = [
     {
       _id: 1,
-      _createdAt: "Yesterday",
-      views: 55,
-      author: { _id: 1 },
+      author: {
+        _id: 1,
+        name: "John Doe",
+      },
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       title: "Random 1",
       image:
         "https://images.unsplash.com/vector-1744686624430-d6865f9ab557?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Category 1",
     },
   ];
 
@@ -42,7 +42,9 @@ export default function Hero() {
 
         <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-5">
           {posts?.length > 0 ? (
-            posts.map((post: Card, index: number) => <Card key={post?._id} />)
+            posts.map((post: Card, index: number) => (
+              <Card key={post._id} post={post} />
+            ))
           ) : (
             <p className="text-center text-gray-500">No results found.</p>
           )}
