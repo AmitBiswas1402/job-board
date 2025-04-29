@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import SearchForm from "./SearchForm";
 import Card from "./Card";
+import { auth } from "@clerk/nextjs/server";
 
 export default function Hero() {
   const searchParams = useSearchParams();
@@ -20,6 +21,16 @@ export default function Hero() {
       image:
         "https://images.unsplash.com/vector-1744686624430-d6865f9ab557?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    {
+      _id: 2,
+      author: {
+        _id: 2,
+        name: "Jane Smith",
+      },
+      description: "Sed do eiusmod tempor incididunt ut labore et dolore.",
+      title: "Random 2",
+      image: ""
+    }
   ];
 
   return (
