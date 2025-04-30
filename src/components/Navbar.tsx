@@ -4,24 +4,25 @@ import { useClerk, useUser, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const { openSignIn } = useClerk();
-  const { isSignedIn } = useUser(); // Get sign-in state
+  const { isSignedIn } = useUser();
 
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl backdrop-blur-lg bg-gradient-to-r from-purple-500/60 via-pink-500/60 to-red-500/60 py-3 px-6 rounded-2xl shadow-lg z-50">
+    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl backdrop-blur-lg bg-white/10 py-3 px-8 rounded-2xl shadow-lg z-50">
       <div className="flex items-center justify-between">
-        <h1 className="text-white text-2xl font-bold">Navbar</h1>
-
+        {/* Left: Logo */}
         <div className="flex items-center gap-6">
-          <button className="text-white hover:text-gray-200 font-medium">
-            Home
-          </button>
-          <button className="text-white hover:text-gray-200 font-medium">
-            About
-          </button>
-          <button className="text-white hover:text-gray-200 font-medium">
-            Contact
-          </button>
+          <h1 className="text-white text-2xl font-bold">JobBoard</h1>
+        </div>
 
+        {/* Center: Nav links */}
+        <div className="flex items-center gap-6 mx-auto">
+          <button className="text-white hover:text-gray-200 font-medium">Home</button>
+          <button className="text-white hover:text-gray-200 font-medium">About</button>
+          <button className="text-white hover:text-gray-200 font-medium">Contact</button>
+        </div>
+
+        {/* Right: Auth button */}
+        <div>
           {isSignedIn ? (
             <UserButton afterSignOutUrl="/" />
           ) : (
