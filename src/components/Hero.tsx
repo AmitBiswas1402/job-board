@@ -7,23 +7,24 @@ import { posts } from "@/constants/index";
 
 export default function Hero() {
   const searchParams = useSearchParams();
-  const query = searchParams.get("query") || "";
+  const query = searchParams.get("query")?.toLowerCase() || "";
+
+  // Filter posts based on title
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(query)
+  );
+  
 
   return (
     <div className="pt-40">
       <section className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 py-20 text-white text-center rounded-b-2xl shadow-lg">
         <h1 className="text-5xl sm:text-6xl font-bold mb-4">
-          {" "}
-          {/* Increased size of h1 */}
           Welcome to Our Website
         </h1>
         <h3 className="text-lg sm:text-xl font-light max-w-3xl mx-auto mb-8">
-          {" "}
-          {/* Decreased size of h3 */}
           Your one-stop destination for amazing opportunities. Start your
           journey today!
         </h3>
-        <SearchForm query={query || ""} />
 
         <div className="mt-6">
           <a
@@ -35,20 +36,29 @@ export default function Hero() {
         </div>
       </section>
 
-      <section>
-        <p className="font-semibold">
-          {query ? `Searching for "${query}"...` : "All at here"}
-        </p>
-
-        <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-5">
-          {posts?.length > 0 ? (
-            posts.map((post: Card, index: number) => (
-              <Card key={post._id} post={post} />
-            ))
+      <section className="mt-10 px-4">
+        <SearchForm query={query} />
+        <div className="font-semibold my-4">
+          {query ? (
+            `Searching for "${query}"...`
           ) : (
-            <p className="text-center text-gray-500">No results found.</p>
+            <div>
+              <span className="text-gray-500">
+                Search by job roles specifically
+              </span>
+            </div>
           )}
-        </ul>
+        </div>
+
+        {filteredPosts.length > 0 ? (
+          <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-5">
+            {filteredPosts.map((post) => (
+              <Card key={post._id} post={post} />
+            ))}
+          </ul>
+        ) : (
+          <p className="text-center text-gray-500">No results found.</p>
+        )}
       </section>
     </div>
   );

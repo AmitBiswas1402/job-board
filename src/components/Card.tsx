@@ -12,6 +12,7 @@ type JobAspects = {
 const JobCard = (props: JobAspects) => {
   const { post } = props;
   const { _id, description, title, tags } = post;
+  
 
   return (
     <Link href={`/${_id}`}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useClerk, useUser, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 const Navbar = () => {
   const { openSignIn } = useClerk();
@@ -11,14 +12,22 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center gap-6">
-          <h1 className="text-white text-2xl font-bold">JobBoard</h1>
+          <Link href="/">
+            <h1 className="text-white text-2xl font-bold">Job Board</h1>
+          </Link>
         </div>
 
         {/* Center: Nav links */}
         <div className="flex items-center gap-6 mx-auto">
-          <button className="text-white hover:text-gray-200 font-medium">Home</button>
-          <button className="text-white hover:text-gray-200 font-medium">About</button>
-          <button className="text-white hover:text-gray-200 font-medium">Contact</button>
+          <button className="text-white hover:text-gray-200 font-medium">
+            Home
+          </button>
+          <button className="text-white hover:text-gray-200 font-medium">
+            About
+          </button>
+          <button className="text-white hover:text-gray-200 font-medium">
+            Contact
+          </button>
         </div>
 
         {/* Right: Auth button */}
