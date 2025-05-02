@@ -1,19 +1,33 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import SearchForm from "./SearchForm";
 import Card from "./Card";
-import { posts } from "@/constants/index";
 
 export default function Hero() {
   const searchParams = useSearchParams();
   const query = searchParams.get("query")?.toLowerCase() || "";
 
-  // Filter posts based on title
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(query)
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await fetch("/api/jobs", { cache: "no-store" });
+        const data = await res.json();
+        setJobs(data);
+      } catch (err) {
+        console.error("Failed to fetch jobs:", err);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  const filteredJobs = jobs.filter((job: any) =>
+    job.title.toLowerCase().includes(query)
   );
-  
 
   return (
     <div className="pt-40">
@@ -42,18 +56,14 @@ export default function Hero() {
           {query ? (
             `Searching for "${query}"...`
           ) : (
-            <div>
-              <span className="text-gray-500">
-                Search by job roles specifically
-              </span>
-            </div>
+            <span className="text-gray-500">Search by job roles specifically</span>
           )}
         </div>
 
-        {filteredPosts.length > 0 ? (
+        {filteredJobs.length > 0 ? (
           <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-5">
-            {filteredPosts.map((post) => (
-              <Card key={post._id} post={post} />
+            {filteredJobs.map((job: any) => (
+              <Card key={job._id} post={job} />
             ))}
           </ul>
         ) : (

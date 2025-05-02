@@ -5,6 +5,7 @@ type JobAspects = {
     _id: number;
     title: string;
     description: string;
+    requirements: string;
     tags: string[];
   };
 };
@@ -15,7 +16,7 @@ const JobCard = (props: JobAspects) => {
   
 
   return (
-    <Link href={`/${_id}`}>
+    <Link href={`/jobs/${_id}`}>
       <li className="border-2 border-gray-300 rounded-lg w-full p-5 shadow-md hover:shadow-lg transition flex flex-col gap-4 bg-black">
         {/* Title */}
         <p className="text-2xl font-bold break-words text-slate-50 hover:underline">
@@ -24,6 +25,12 @@ const JobCard = (props: JobAspects) => {
 
         {/* Description */}
         <p className="text-sm text-gray-700 break-words">{description}</p>
+
+          
+          {/* Requirements */}
+          <p>
+            <span className="font-semibold">Requirements:</span> {post.requirements}
+          </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">
