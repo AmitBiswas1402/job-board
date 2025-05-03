@@ -45,7 +45,7 @@ const JobCard = ({
         const error = await res.json();
         alert("Upload failed: " + error.error);
       }
-    } catch (err) {
+    } catch {
       alert("Something went wrong!");
     } finally {
       setUploading(false);
@@ -55,7 +55,7 @@ const JobCard = ({
   return (
     <li className="relative p-6 border rounded-lg shadow bg-white space-y-4">
       <h3 className="font-bold text-xl text-purple-700">{job.title}</h3>
-      <p className="mt-2">{job.description}</p>
+      <p className="mt-2 text-slate-50">{job.description}</p>
 
       <div className="flex flex-wrap gap-2 mt-3">
         {job.tags.map((tag) => (

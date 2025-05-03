@@ -13,7 +13,6 @@ type JobAspects = {
 const JobCard = (props: JobAspects) => {
   const { post } = props;
   const { _id, description, title, tags } = post;
-  
 
   return (
     <Link href={`/jobs/${_id}`}>
@@ -24,13 +23,13 @@ const JobCard = (props: JobAspects) => {
         </p>
 
         {/* Description */}
-        <p className="text-sm text-gray-700 break-words">{description}</p>
+        <p className="text-sm text-gray-400 break-words">{description}</p>
 
-          
-          {/* Requirements */}
-          <p>
-            <span className="font-semibold">Requirements:</span> {post.requirements}
-          </p>
+        {/* Requirements */}
+        <p>
+          <span className="font-semibold">Requirements:</span>{" "}
+          {post.requirements}
+        </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">

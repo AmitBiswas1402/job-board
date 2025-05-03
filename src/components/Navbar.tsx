@@ -1,6 +1,7 @@
 "use client";
 
 import { useClerk, useUser, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -13,7 +14,16 @@ const Navbar = () => {
         {/* Left: Logo */}
         <div className="flex items-center gap-6">
           <Link href="/">
-            <h1 className="text-white text-2xl font-bold">Job Board</h1>
+            <h1 className="text-white text-2xl font-bold">
+              Job Board
+              <Image
+                src="/navbar.png"
+                alt="Logo"
+                className="inline-block ml-2 mb-1.5"
+                height={25}
+                width={25}
+              />
+            </h1>
           </Link>
         </div>
 

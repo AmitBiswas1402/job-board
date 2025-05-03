@@ -4,6 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import SearchForm from "./SearchForm";
 import Card from "./Card";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   const searchParams = useSearchParams();
@@ -33,7 +35,18 @@ export default function Hero() {
     <div className="pt-40">
       <section className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 py-20 text-white text-center rounded-b-2xl shadow-lg">
         <h1 className="text-5xl sm:text-6xl font-bold mb-4">
-          Welcome to Our Website
+          Welcome to Job Board
+          <span>
+            <Link href="/">
+              <Image
+                src="/group.png"
+                alt="Logo"
+                className="inline-block ml-2"
+                height={60}
+                width={60}
+              ></Image>
+            </Link>
+          </span>
         </h1>
         <h3 className="text-lg sm:text-xl font-light max-w-3xl mx-auto mb-8">
           Your one-stop destination for amazing opportunities. Start your
