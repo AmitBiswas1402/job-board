@@ -18,19 +18,17 @@ export async function POST(req: NextRequest) { // Create a new job
     await connectDB();
     const body = await req.json();
     console.log("Received Body:", body)
-    const { title, description, requirements, tags, type } = body;
+    const { title, description, tags } = body;
 
     // Basic validation
-    if (!title || !description || !requirements || !type || !tags) {
+    if (!title || !description || !tags) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
     }
 
     const newJob = await Job.create({
       title,
       description,
-      requirements,
       tags: tags || [],
-      type,
     });
 
     return NextResponse.json(newJob, { status: 201 });

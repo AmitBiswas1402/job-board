@@ -41,22 +41,18 @@ export default function Hero() {
         </h3>
 
         <div className="mt-6">
-          <a
-            href="#"
-            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-medium px-6 py-3 rounded-lg shadow-lg transition"
-          >
-            Upload Your Resume
-          </a>
+          <SearchForm query={query} />
         </div>
       </section>
 
       <section className="mt-10 px-4">
-        <SearchForm query={query} />
         <div className="font-semibold my-4">
           {query ? (
             `Searching for "${query}"...`
           ) : (
-            <span className="text-gray-500">Search by job roles specifically</span>
+            <span className="text-gray-500">
+              Search by job roles specifically
+            </span>
           )}
         </div>
 

@@ -17,21 +17,8 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Center: Nav links */}
-        <div className="flex items-center gap-6 mx-auto">
-          <button className="text-white hover:text-gray-200 font-medium">
-            Home
-          </button>
-          <button className="text-white hover:text-gray-200 font-medium">
-            About
-          </button>
-          <button className="text-white hover:text-gray-200 font-medium">
-            Contact
-          </button>
-        </div>
-
-        {/* Right: Auth button */}
-        <div>
+        {/* Center: Sign In */}
+        <div className="flex-1 flex justify-center">
           {isSignedIn ? (
             <UserButton afterSignOutUrl="/" />
           ) : (
@@ -42,6 +29,15 @@ const Navbar = () => {
               Sign In
             </button>
           )}
+        </div>
+
+        {/* Right: Dashboard Button */}
+        <div>
+          <Link href="/dashboard/employer">
+            <button className="text-white bg-purple-600 hover:bg-purple-700 font-medium px-4 py-2 rounded-lg transition-all">
+              Dashboard
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
