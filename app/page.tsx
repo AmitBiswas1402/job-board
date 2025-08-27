@@ -2,13 +2,18 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarGroup,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AppSidebarClient } from "./_AppSidebarClient";
+import { SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
+import { LogInIcon } from "lucide-react";
 
 const page = () => {
   return (
@@ -21,9 +26,20 @@ const page = () => {
           </SidebarHeader>
           <SidebarContent></SidebarContent>
           <SidebarFooter>
-            <SidebarMenu>
-              <SidebarMenuItem>menu</SidebarMenuItem>
-            </SidebarMenu>
+            <SidebarGroup>
+              <SignedOut>
+                <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <Link href="/sign-in">
+                      <LogInIcon />
+                      <span>Log In</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+              </SignedOut>
+            </SidebarGroup>
           </SidebarFooter>
         </Sidebar>
         <main className="flex-1">content</main>
