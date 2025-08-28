@@ -27,18 +27,18 @@ const page = () => {
           <SidebarContent></SidebarContent>
           <SidebarFooter>
             <SidebarGroup>
-              <SignedOut>
-                <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton asChild>
-                    <Link href="/sign-in">
-                      <LogInIcon />
-                      <span>Log In</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+              <SidebarMenu>
+                <SignedOut>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href="/sign-in">
+                        <LogInIcon />
+                        <span>Log In</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SignedOut>
               </SidebarMenu>
-              </SignedOut>
             </SidebarGroup>
           </SidebarFooter>
         </Sidebar>
