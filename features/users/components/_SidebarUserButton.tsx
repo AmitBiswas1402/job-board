@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
-import { SignOutButton } from "@/services/clerk/components/AuthButtons"
+// import { SignOutButton } from "@/services/clerk/components/AuthButtons"
 import { useClerk } from "@clerk/nextjs"
 import {
   ChevronsUpDown,
@@ -65,11 +65,11 @@ export function SidebarUserButtonClient({ user }: { user: User }) {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <SignOutButton>
+        {/* <SignOutButton> */}
           <DropdownMenuItem>
             <LogOutIcon className="mr-1" /> Log Out
           </DropdownMenuItem>
-        </SignOutButton>
+        {/* </SignOutButton> */}
       </DropdownMenuContent>
     </DropdownMenu>
   )

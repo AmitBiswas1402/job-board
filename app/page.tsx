@@ -14,6 +14,7 @@ import { AppSidebarClient } from "./_AppSidebarClient";
 import { SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { LogInIcon } from "lucide-react";
+import { SidebarUserButton } from "@/features/users/components/SidebarUserButton";
 
 const page = () => {
   return (
@@ -30,12 +31,7 @@ const page = () => {
               <SidebarMenu>
                 <SignedOut>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild>
-                      <Link href="/sign-in">
-                        <LogInIcon />
-                        <span>Log In</span>
-                      </Link>
-                    </SidebarMenuButton>
+                    <SidebarUserButton />
                   </SidebarMenuItem>
                 </SignedOut>
               </SidebarMenu>
