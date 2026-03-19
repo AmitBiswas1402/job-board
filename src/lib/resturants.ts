@@ -2,6 +2,8 @@ export const restaurants = [
   {
     id: 1,
     name: "Biryani House",
+    description:
+      "Authentic dum-style biryanis cooked with rich spices. A perfect blend of aroma and tradition in every bite.",
     categories: [2],
     image: "/biryani.jpg",
     type: "non-veg",
@@ -16,7 +18,9 @@ export const restaurants = [
   {
     id: 2,
     name: "South Spice",
-    categories: [5, 9],
+    description:
+      "Fresh South Indian dishes made with traditional recipes. Crispy dosas and flavorful sambars served hot.",
+    categories: [8, 15],
     image: "/south.jpg",
     type: "veg",
     rating: 4.3,
@@ -30,7 +34,9 @@ export const restaurants = [
   {
     id: 3,
     name: "Sweet World",
-    categories: [3, 6, 13],
+    description:
+      "Traditional Indian sweets crafted with premium ingredients. A paradise for every dessert lover.",
+    categories: [4, 18],
     image: "/dessert.jpg",
     type: "veg",
     rating: 4.6,
@@ -44,7 +50,9 @@ export const restaurants = [
   {
     id: 4,
     name: "Tandoori King",
-    categories: [1, 7],
+    description:
+      "Flame-grilled tandoori delights with smoky flavors. Juicy, spicy, and cooked to perfection.",
+    categories: [1],
     image: "/tandoori.jpg",
     type: "both",
     rating: 4.4,
@@ -58,7 +66,9 @@ export const restaurants = [
   {
     id: 5,
     name: "Curry Master",
-    categories: [4, 8],
+    description:
+      "Rich and creamy curries made from authentic spices. A comforting North Indian experience.",
+    categories: [1],
     image: "/curry.jpg",
     type: "both",
     rating: 4.2,
@@ -69,10 +79,13 @@ export const restaurants = [
       { id: 4, name: "Rice Bowl", price: 80 },
     ],
   },
+
   {
     id: 6,
     name: "Chai Corner",
-    categories: [12, 14],
+    description:
+      "Freshly brewed teas paired with tasty snacks. The perfect evening hangout spot.",
+    categories: [14],
     image: "/chai.jpg",
     type: "veg",
     rating: 4.1,
@@ -83,10 +96,13 @@ export const restaurants = [
       { id: 4, name: "Chai Biscuits Pack", price: 50 },
     ],
   },
+
   {
     id: 7,
     name: "Bengal Kitchen",
-    categories: [2, 4],
+    description:
+      "Authentic Bengali cuisine with traditional flavors. Sweet and savory delights from the East.",
+    categories: [1],
     image: "/bengal.jpg",
     type: "both",
     rating: 4.3,
@@ -97,10 +113,13 @@ export const restaurants = [
       { id: 4, name: "Sandesh", price: 60 },
     ],
   },
+
   {
     id: 8,
     name: "Southeast Flavors",
-    categories: [5, 9],
+    description:
+      "A blend of Thai and Vietnamese specialties. Fresh herbs and bold Asian spices.",
+    categories: [3, 9],
     image: "/seasia.jpg",
     type: "both",
     rating: 4.4,
@@ -111,10 +130,13 @@ export const restaurants = [
       { id: 4, name: "Spring Rolls", price: 150 },
     ],
   },
+
   {
     id: 9,
     name: "Tokyo Express",
-    categories: [5, 9],
+    description:
+      "Quick Japanese favorites served fresh daily. Sushi, ramen, and more in every order.",
+    categories: [3, 9],
     image: "/tokyo.jpg",
     type: "both",
     rating: 4.5,
@@ -125,10 +147,13 @@ export const restaurants = [
       { id: 4, name: "Gyoza", price: 180 },
     ],
   },
+
   {
     id: 10,
     name: "Shanghai Wok",
-    categories: [4, 5],
+    description:
+      "Wok-tossed Chinese dishes bursting with flavor. Street-style classics done right.",
+    categories: [3, 9],
     image: "/shanghai.jpg",
     type: "both",
     rating: 4.2,
@@ -142,7 +167,9 @@ export const restaurants = [
   {
     id: 11,
     name: "European Bistro",
-    categories: [1, 8],
+    description:
+      "Elegant European classics made with authentic recipes. A cozy spot for rich continental flavors.",
+    categories: [13],
     image: "/european.jpg",
     type: "both",
     rating: 4.6,
@@ -156,7 +183,9 @@ export const restaurants = [
   {
     id: 12,
     name: "Quick Bites",
-    categories: [10, 11],
+    description:
+      "Fast food favorites served hot and fresh. Perfect for quick cravings and tasty combos.",
+    categories: [10, 6],
     image: "/fastfood.jpg",
     type: "both",
     rating: 4.0,
@@ -170,6 +199,8 @@ export const restaurants = [
   {
     id: 13,
     name: "Kebab Palace",
+    description:
+      "Juicy kebabs grilled over open flames. A paradise for lovers of smoky flavors.",
     categories: [1, 7],
     image: "/kebab.jpg",
     type: "non-veg",
@@ -184,7 +215,9 @@ export const restaurants = [
   {
     id: 14,
     name: "Noodle Express",
-    categories: [5, 9],
+    description:
+      "Flavorful noodle bowls tossed in bold sauces. Comfort food ready in minutes.",
+    categories: [9],
     image: "/noodle.jpg",
     type: "both",
     rating: 4.2,
@@ -198,7 +231,9 @@ export const restaurants = [
   {
     id: 15,
     name: "Pizza Hub",
-    categories: [10, 11],
+    description:
+      "Freshly baked pizzas loaded with cheese. Classic and creative toppings for every mood.",
+    categories: [6],
     image: "/pizza.jpg",
     type: "both",
     rating: 4.3,
@@ -212,7 +247,9 @@ export const restaurants = [
   {
     id: 16,
     name: "Samosa Stall",
-    categories: [10, 11],
+    description:
+      "Crispy golden samosas filled with delicious stuffing. A true Indian snack favorite.",
+    categories: [7],
     image: "/samosa.jpg",
     type: "veg",
     rating: 4.1,
@@ -226,7 +263,9 @@ export const restaurants = [
   {
     id: 17,
     name: "Modern Cafe",
-    categories: [12, 14],
+    description:
+      "Premium coffees brewed to perfection. A stylish space to relax and recharge.",
+    categories: [16],
     image: "/cafe.jpg",
     type: "both",
     rating: 4.4,
@@ -240,7 +279,9 @@ export const restaurants = [
   {
     id: 18,
     name: "Rajasthani Kitchen",
-    categories: [2, 4],
+    description:
+      "Authentic Rajasthani dishes made with traditional spices. Experience royal flavors in every bite.",
+    categories: [1],
     image: "/rajasthan.jpg",
     type: "veg",
     rating: 4.5,
@@ -254,7 +295,9 @@ export const restaurants = [
   {
     id: 19,
     name: "Momos House",
-    categories: [5, 9],
+    description:
+      "Steamed and fried momos packed with flavor. A go-to place for dumpling lovers.",
+    categories: [12],
     image: "/momos.jpg",
     type: "both",
     rating: 4.3,
@@ -268,7 +311,9 @@ export const restaurants = [
   {
     id: 20,
     name: "Health Bowl",
-    categories: [3, 6],
+    description:
+      "Nutritious bowls made with fresh ingredients. Healthy eating without compromising taste.",
+    categories: [16],
     image: "/health.jpg",
     type: "veg",
     rating: 4.6,
@@ -282,7 +327,9 @@ export const restaurants = [
   {
     id: 21,
     name: "Chole Bhature",
-    categories: [2, 4],
+    description:
+      "North Indian street-style comfort food. Fluffy bhature served with spicy chole.",
+    categories: [1, 14],
     image: "/chole.jpg",
     type: "veg",
     rating: 4.2,
@@ -296,7 +343,9 @@ export const restaurants = [
   {
     id: 22,
     name: "Waffle Corner",
-    categories: [3, 6, 13],
+    description:
+      "Crispy waffles topped with sweet delights. A treat for every dessert lover.",
+    categories: [4, 5],
     image: "/waffle.jpg",
     type: "veg",
     rating: 4.4,
@@ -310,7 +359,9 @@ export const restaurants = [
   {
     id: 23,
     name: "Grilled Paradise",
-    categories: [1, 7],
+    description:
+      "Perfectly grilled meats and vegetables. Smoky flavors cooked to perfection.",
+    categories: [1],
     image: "/grilled.jpg",
     type: "both",
     rating: 4.5,
@@ -324,7 +375,9 @@ export const restaurants = [
   {
     id: 24,
     name: "Idli Sambar",
-    categories: [5, 9],
+    description:
+      "Soft idlis served with rich sambar and chutney. A South Indian breakfast classic.",
+    categories: [8, 15],
     image: "/idli.jpg",
     type: "veg",
     rating: 4.3,
@@ -338,7 +391,9 @@ export const restaurants = [
   {
     id: 25,
     name: "Fruit Shake Parlor",
-    categories: [12, 14],
+    description:
+      "Fresh fruit shakes blended daily. Cool, refreshing, and naturally sweet.",
+    categories: [16],
     image: "/fruitshake.jpg",
     type: "veg",
     rating: 4.1,
@@ -352,7 +407,9 @@ export const restaurants = [
   {
     id: 26,
     name: "Korean Grill",
-    categories: [5, 9],
+    description:
+      "Authentic Korean BBQ with bold spices. Sizzling plates full of flavor.",
+    categories: [3],
     image: "/korean.jpg",
     type: "both",
     rating: 4.5,
@@ -366,7 +423,9 @@ export const restaurants = [
   {
     id: 27,
     name: "Panipuri Point",
-    categories: [10, 11],
+    description:
+      "Crispy golgappas filled with tangy water. Street food bursting with flavor.",
+    categories: [7],
     image: "/panipuri.jpg",
     type: "veg",
     rating: 4.0,
@@ -380,7 +439,9 @@ export const restaurants = [
   {
     id: 28,
     name: "Thai Cuisine",
-    categories: [5, 9],
+    description:
+      "Traditional Thai curries and noodles. Aromatic herbs and bold flavors in every dish.",
+    categories: [3, 9],
     image: "/thai.jpg",
     type: "both",
     rating: 4.4,
@@ -394,7 +455,9 @@ export const restaurants = [
   {
     id: 29,
     name: "Lebanese House",
-    categories: [1, 8],
+    description:
+      "Authentic Middle Eastern wraps and platters. Fresh hummus and grilled specialties.",
+    categories: [19, 7],
     image: "/lebanese.jpg",
     type: "both",
     rating: 4.3,
@@ -408,7 +471,9 @@ export const restaurants = [
   {
     id: 30,
     name: "Dhaba Style",
-    categories: [2, 4],
+    description:
+      "Rustic Punjabi dhaba flavors. Hearty meals cooked with traditional spices.",
+    categories: [1, 14],
     image: "/dhaba.jpg",
     type: "both",
     rating: 4.2,
@@ -422,7 +487,9 @@ export const restaurants = [
   {
     id: 31,
     name: "Sandwich Hub",
-    categories: [10, 11],
+    description:
+      "Freshly prepared sandwiches with premium fillings. Quick bites perfect for any time of day.",
+    categories: [7],
     image: "/sandwich.jpg",
     type: "both",
     rating: 4.1,
@@ -436,7 +503,9 @@ export const restaurants = [
   {
     id: 32,
     name: "Ice Cream Paradise",
-    categories: [3, 6, 13],
+    description:
+      "Creamy scoops in classic and exotic flavors. A sweet escape for every dessert lover.",
+    categories: [11, 4],
     image: "/icecream.jpg",
     type: "veg",
     rating: 4.6,
@@ -450,7 +519,9 @@ export const restaurants = [
   {
     id: 33,
     name: "Mexican Fiesta",
-    categories: [1, 8],
+    description:
+      "Spicy tacos and loaded burritos made fresh. Authentic Mexican street-style flavors.",
+    categories: [7],
     image: "/mexican.jpg",
     type: "both",
     rating: 4.4,
@@ -464,7 +535,9 @@ export const restaurants = [
   {
     id: 34,
     name: "Dosa King",
-    categories: [5, 9],
+    description:
+      "Crispy dosas served with rich sambar and chutney. South Indian flavors done right.",
+    categories: [8, 15],
     image: "/dosakking.jpg",
     type: "veg",
     rating: 4.3,
@@ -478,7 +551,9 @@ export const restaurants = [
   {
     id: 35,
     name: "Pasta Paradise",
-    categories: [1, 8],
+    description:
+      "Italian pasta cooked in rich, flavorful sauces. Comfort food with a continental touch.",
+    categories: [13],
     image: "/pasta.jpg",
     type: "both",
     rating: 4.5,
@@ -492,7 +567,9 @@ export const restaurants = [
   {
     id: 36,
     name: "Vada Pav Corner",
-    categories: [10, 11],
+    description:
+      "Mumbai’s iconic street snack served fresh. Spicy, crispy, and full of flavor.",
+    categories: [7],
     image: "/vadapav.jpg",
     type: "veg",
     rating: 4.2,
@@ -506,7 +583,9 @@ export const restaurants = [
   {
     id: 37,
     name: "Juice Bar",
-    categories: [12, 14],
+    description:
+      "Freshly squeezed juices and smoothies. Healthy refreshment made delicious.",
+    categories: [16],
     image: "/juicebar.jpg",
     type: "veg",
     rating: 4.3,
@@ -520,7 +599,9 @@ export const restaurants = [
   {
     id: 38,
     name: "Afghan Breads",
-    categories: [1, 7],
+    description:
+      "Traditional Afghan specialties and breads. Rich spices and hearty flavors.",
+    categories: [1],
     image: "/afghan.jpg",
     type: "non-veg",
     rating: 4.4,
@@ -534,7 +615,9 @@ export const restaurants = [
   {
     id: 39,
     name: "Biryani Express",
-    categories: [2, 4],
+    description:
+      "Fast and flavorful biryanis served hot. Classic recipes made quick and delicious.",
+    categories: [2],
     image: "/biryaniexpress.jpg",
     type: "both",
     rating: 4.5,
@@ -548,7 +631,9 @@ export const restaurants = [
   {
     id: 40,
     name: "Crepe Cafe",
-    categories: [3, 6],
+    description:
+      "Sweet and savory crepes made fresh. A delightful French-inspired experience.",
+    categories: [4, 5],
     image: "/crepe.jpg",
     type: "veg",
     rating: 4.2,
@@ -562,7 +647,9 @@ export const restaurants = [
   {
     id: 41,
     name: "Grilled Cheese",
-    categories: [10, 11],
+    description:
+      "Golden toasted sandwiches with melted cheese. Simple comfort food made perfect.",
+    categories: [7],
     image: "/grilledcheese.jpg",
     type: "veg",
     rating: 4.1,
@@ -576,7 +663,9 @@ export const restaurants = [
   {
     id: 42,
     name: "Vietnamese Pho",
-    categories: [5, 9],
+    description:
+      "Authentic pho with rich aromatic broth. Fresh herbs and bold Vietnamese flavors.",
+    categories: [3, 9],
     image: "/phocafe.jpg",
     type: "both",
     rating: 4.4,
@@ -590,7 +679,9 @@ export const restaurants = [
   {
     id: 43,
     name: "Soya Chaap House",
-    categories: [2, 4],
+    description:
+      "Delicious vegetarian chaap in smoky flavors. Spicy, juicy, and satisfying.",
+    categories: [1, 7],
     image: "/soyachaap.jpg",
     type: "veg",
     rating: 4.3,
@@ -604,7 +695,9 @@ export const restaurants = [
   {
     id: 44,
     name: "Donut Shop",
-    categories: [3, 6, 13],
+    description:
+      "Freshly baked donuts topped with sweetness. Soft, fluffy, and irresistible.",
+    categories: [4, 17],
     image: "/donut.jpg",
     type: "veg",
     rating: 4.5,
@@ -618,7 +711,9 @@ export const restaurants = [
   {
     id: 45,
     name: "Meatball Joint",
-    categories: [1, 8],
+    description:
+      "Juicy meatballs cooked in rich sauces. A hearty treat for meat lovers.",
+    categories: [1],
     image: "/meatball.jpg",
     type: "non-veg",
     rating: 4.4,
@@ -632,7 +727,9 @@ export const restaurants = [
   {
     id: 46,
     name: "Bhelpuri Stall",
-    categories: [10, 11],
+    description:
+      "Tangy and crunchy street-style chaat. A burst of flavors in every bite.",
+    categories: [7],
     image: "/bhelpuri.jpg",
     type: "veg",
     rating: 4.0,
@@ -646,7 +743,9 @@ export const restaurants = [
   {
     id: 47,
     name: "Bubble Tea House",
-    categories: [12, 14],
+    description:
+      "Trendy bubble teas in exciting flavors. Refreshing drinks with chewy boba pearls.",
+    categories: [16],
     image: "/bubbletea.jpg",
     type: "veg",
     rating: 4.3,
@@ -660,7 +759,9 @@ export const restaurants = [
   {
     id: 48,
     name: "Fish & Chips Shop",
-    categories: [1, 8],
+    description:
+      "Crispy battered fish served golden brown. A classic coastal comfort meal.",
+    categories: [1],
     image: "/fishchips.jpg",
     type: "non-veg",
     rating: 4.4,
@@ -674,7 +775,9 @@ export const restaurants = [
   {
     id: 49,
     name: "Falafel Street",
-    categories: [10, 11],
+    description:
+      "Fresh falafel wraps and platters. Middle Eastern flavors made authentic.",
+    categories: [7],
     image: "/falafel.jpg",
     type: "veg",
     rating: 4.2,
@@ -688,7 +791,9 @@ export const restaurants = [
   {
     id: 50,
     name: "Asian Fusion",
-    categories: [4, 5],
+    description:
+      "Creative dishes inspired by Asian cuisines. Bold flavors with a modern twist.",
+    categories: [3, 9],
     image: "/fusion.jpg",
     type: "both",
     rating: 4.5,
@@ -697,6 +802,166 @@ export const restaurants = [
       { id: 2, name: "Asian Tacos", price: 280 },
       { id: 3, name: "Fusion Noodles", price: 260 },
       { id: 4, name: "Fusion Rice", price: 240 },
+    ],
+  },
+  {
+    id: 51,
+    name: "Moti Mahal Delux",
+    description:
+      "Legendary North Indian cuisine with rich gravies. Royal flavors crafted with tradition.",
+    categories: [1],
+    image: "/motimahal.jpg",
+    type: "both",
+    rating: 4.7,
+    menu: [
+      { id: 1, name: "Butter Chicken", price: 420 },
+      { id: 2, name: "Dal Makhani", price: 320 },
+      { id: 3, name: "Tandoori Chicken", price: 380 },
+      { id: 4, name: "Paneer Makhani", price: 350 },
+    ],
+  },
+  {
+    id: 52,
+    name: "Daryaganj Originals",
+    description:
+      "Home of authentic butter chicken recipes. Classic North Indian flavors redefined.",
+    categories: [1],
+    image: "/daryaganj.jpg",
+    type: "both",
+    rating: 4.6,
+    menu: [
+      { id: 1, name: "Original Butter Chicken", price: 440 },
+      { id: 2, name: "Handi Chicken", price: 400 },
+      { id: 3, name: "Kadhai Paneer", price: 340 },
+      { id: 4, name: "Garlic Naan", price: 90 },
+    ],
+  },
+  {
+    id: 53,
+    name: "Punjab Grill House",
+    description:
+      "Bold Punjabi spices and hearty meals. Traditional dishes packed with flavor.",
+    categories: [1],
+    image: "/punjabgrill.jpg",
+    type: "both",
+    rating: 4.5,
+    menu: [
+      { id: 1, name: "Amritsari Kulcha", price: 180 },
+      { id: 2, name: "Paneer Tikka", price: 320 },
+      { id: 3, name: "Kadhai Chicken", price: 390 },
+      { id: 4, name: "Dal Tadka", price: 260 },
+    ],
+  },
+  {
+    id: 54,
+    name: "Tandoori Nights",
+    description:
+      "Late-night tandoori cravings sorted. Smoky grilled delights served hot.",
+    categories: [1, 7],
+    image: "/tandoorinights.jpg",
+    type: "both",
+    rating: 4.4,
+    menu: [
+      { id: 1, name: "Chicken Seekh Kebab", price: 360 },
+      { id: 2, name: "Malai Tikka", price: 380 },
+      { id: 3, name: "Tandoori Roti", price: 40 },
+      { id: 4, name: "Paneer Tikka", price: 340 },
+    ],
+  },
+  {
+    id: 55,
+    name: "Handi Junction",
+    description:
+      "Slow-cooked handi dishes full of rich flavor. Traditional cooking with authentic spices.",
+    categories: [2],
+    image: "/handi.jpg",
+    type: "both",
+    rating: 4.3,
+    menu: [
+      { id: 1, name: "Handi Paneer", price: 330 },
+      { id: 2, name: "Handi Chicken", price: 410 },
+      { id: 3, name: "Butter Naan", price: 70 },
+      { id: 4, name: "Jeera Rice", price: 180 },
+    ],
+  },
+  {
+    id: 56,
+    name: "Kebab & Curries",
+    description:
+      "Flavorful kebabs paired with rich curries. A true North Indian feast.",
+    categories: [1, 7],
+    image: "/kebabcurry.jpg",
+    type: "non-veg",
+    rating: 4.5,
+    menu: [
+      { id: 1, name: "Mutton Seekh Kebab", price: 420 },
+      { id: 2, name: "Chicken Tikka", price: 360 },
+      { id: 3, name: "Mutton Rogan Josh", price: 480 },
+      { id: 4, name: "Rumali Roti", price: 50 },
+    ],
+  },
+  {
+    id: 57,
+    name: "Delhi Darbar",
+    description:
+      "Classic Mughlai dishes inspired by Delhi flavors. Rich gravies and comforting meals.",
+    categories: [1],
+    image: "/delhidarbar.jpg",
+    type: "both",
+    rating: 4.6,
+    menu: [
+      { id: 1, name: "Paneer Butter Masala", price: 350 },
+      { id: 2, name: "Dal Makhani", price: 310 },
+      { id: 3, name: "Kadhai Chicken", price: 400 },
+      { id: 4, name: "Laccha Paratha", price: 80 },
+    ],
+  },
+  {
+    id: 58,
+    name: "Royal Tandoor",
+    description:
+      "Premium tandoori platters and creamy curries. Royal taste in every serving.",
+    categories: [1, 7],
+    image: "/royaltandoor.jpg",
+    type: "both",
+    rating: 4.4,
+    menu: [
+      { id: 1, name: "Tandoori Platter", price: 520 },
+      { id: 2, name: "Chicken Afghani", price: 420 },
+      { id: 3, name: "Paneer Lababdar", price: 360 },
+      { id: 4, name: "Butter Roti", price: 45 },
+    ],
+  },
+  {
+    id: 59,
+    name: "Makhani Magic",
+    description:
+      "Specialists in creamy makhani gravies. Smooth, rich, and indulgent flavors.",
+    categories: [1],
+    image: "/makhani.jpg",
+    type: "both",
+    rating: 4.5,
+    menu: [
+      { id: 1, name: "Butter Chicken", price: 410 },
+      { id: 2, name: "Paneer Makhani", price: 340 },
+      { id: 3, name: "Dal Makhani", price: 300 },
+      { id: 4, name: "Kadhai Paneer", price: 330 },
+    ],
+  },
+  {
+    id: 60,
+    name: "Punjab Da Dhaba",
+    description:
+      "Authentic roadside Punjabi flavors. Rustic comfort food made with love.",
+    categories: [1],
+    image: "/punjabdhaba.jpg",
+    type: "both",
+    rating: 4.3,
+    menu: [
+      { id: 1, name: "Sarson Ka Saag", price: 260 },
+      { id: 2, name: "Makki Ki Roti", price: 60 },
+      { id: 3, name: "Handi Chicken", price: 390 },
+      { id: 4, name: "Paneer Tikka Masala", price: 350 },
     ],
   },
 ];

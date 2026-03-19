@@ -173,3 +173,71 @@ export const menuItemsRelations = relations(
     }),
   })
 );
+
+/* =========================================================
+   CARTS TABLE
+========================================================= */
+
+export const cartsTable = pgTable("carts", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+
+  userId: varchar("user_id", { length: 255 }).notNull().unique(),
+
+  restaurantId: integer("restaurant_id")
+    .notNull()
+    .references(() => restaurantsTable.id, { onDelete: "cascade" }),
+
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+/* =========================================================
+   CART ITEMS TABLE
+========================================================= */
+
+export const cartItemsTable = pgTable("cart_items", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+
+  cartId: integer("cart_id")
+    .notNull()
+    .references(() => cartsTable.id, { onDelete: "cascade" }),
+
+  menuItemId: integer("menu_item_id")
+    .notNull()
+    .references(() => menuItemsTable.id, { onDelete: "cascade" }),
+
+  quantity: integer("quantity").notNull().default(1),
+
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+/* =========================================================
+   CART RELATIONS
+========================================================= */
+
+export const cartsRelations = relations(cartsTable, ({ one, many }) => ({
+  restaurant: one(restaurantsTable, {
+    fields: [cartsTable.restaurantId],
+    references: [restaurantsTable.id],
+  }),
+
+  items: many(cartItemsTable),
+}));
+
+export const cartItemsRelations = relations(
+  cartItemsTable,
+  ({ one }) => ({
+    cart: one(cartsTable, {
+      fields: [cartItemsTable.cartId],
+      references: [cartsTable.id],
+    }),
+
+    menuItem: one(menuItemsTable, {
+      fields: [cartItemsTable.menuItemId],
+      references: [menuItemsTable.id],
+    }),
+  })
+);

@@ -1,10 +1,13 @@
 import { UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="flex items-center gap-6 bg-black px-10 py-6">
       {/* Brand */}
-      <h1 className="text-2xl font-extrabold text-white shrink-0">Food</h1>
+      <Link href={"/"}>
+        <h1 className="text-2xl font-extrabold text-white shrink-0">Food</h1>
+      </Link>
 
       {/* Location selector */}
       {/* <div className="flex items-center gap-2 border border-gray-700 rounded-lg px-4 py-2 max-w-xs w-full cursor-pointer hover:border-gray-500 transition-colors">
