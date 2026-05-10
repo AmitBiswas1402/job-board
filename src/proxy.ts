@@ -1,35 +1,30 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
-
-const isOwnerRoute = createRouteMatcher([
-  "/dashboard/owner(.*)",
-]);
+import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId, sessionClaims } = await auth();
+  const { userId } = await auth();
+  const { pathname } = req.nextUrl;
 
-  // If not logged in → redirect to login
-  if (!userId) {
-    return NextResponse.redirect(new URL("/sign-in", req.url));
+  // Skip internal paths and auth pages
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/sign-in") ||
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/static") ||
+    pathname === "/favicon.ico"
+  ) {
+    return NextResponse.next();
   }
 
-  const role = (sessionClaims?.publicMetadata as Record<string, unknown>)?.role as string | undefined;
-
-  // Protect owner routes
-  if (isOwnerRoute(req)) {
-    if (role !== "restaurant_owner") {
-      return NextResponse.redirect(new URL("/unauthorized", req.url));
-    }
+  // If not authenticated, Clerk will redirect to sign-in automatically
+  if (!userId) {
+    return NextResponse.next();
   }
 
   return NextResponse.next();
 });
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
-    '/(api|trpc)(.*)',
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
