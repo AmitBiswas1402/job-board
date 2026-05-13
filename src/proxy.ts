@@ -1,25 +1,26 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
+const isPublicRoute = createRouteMatcher([
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+]);
+
 export default clerkMiddleware(async (auth, req) => {
-  const { userId } = await auth();
   const { pathname } = req.nextUrl;
 
-  // Skip internal paths and auth pages
+  // Allow static assets
   if (
     pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/sign-up") ||
     pathname.startsWith("/static") ||
     pathname === "/favicon.ico"
   ) {
     return NextResponse.next();
   }
 
-  // If not authenticated, Clerk will redirect to sign-in automatically
-  if (!userId) {
-    return NextResponse.next();
+  // If it's not a public route, require authentication
+  if (!isPublicRoute(req)) {
+    await auth.protect();
   }
 
   return NextResponse.next();
