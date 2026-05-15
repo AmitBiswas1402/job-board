@@ -1,22 +1,38 @@
 import { NextResponse } from "next/server";
-import { prisma } from "../../../lib/prisma";
-import { clerkClient } from "@clerk/nextjs/server";
+import { Webhook } from "svix";
+import { getPrisma } from "@/lib/prisma";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const type = body?.type;
-    const data = body?.data || body?.resource;
+    const payload = await req.json();
+    const headers = {
+      "svix-id": req.headers.get("svix-id") || "",
+      "svix-timestamp": req.headers.get("svix-timestamp") || "",
+      "svix-signature": req.headers.get("svix-signature") || "",
+    };
 
-    // handle user.created events (Clerk webhook payload may vary)
-    if (type === "user.created" || (data && data.object && data.object.id)) {
-      const userId = data.object?.id ?? data.id;
+    // Verify webhook signature
+    const wh = new Webhook(process.env.CLERK_WEBHOOK_SECRET || "");
+    let evt;
+    try {
+      evt = wh.verify(JSON.stringify(payload), headers) as any;
+    } catch (err) {
+      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    }
+
+    const type = evt.type;
+    const data = evt.data;
+    const prisma = await getPrisma();
+
+    // Handle user.created events
+    if (type === "user.created") {
+      const userId = data?.id;
       if (!userId) return NextResponse.json({ ok: true });
 
-      // fetch clerk user to get email/name
-      const clerkUser = await clerkClient.users.getUser(userId);
-      const email = clerkUser.emailAddresses?.[0]?.emailAddress ?? "";
-      const name = clerkUser.firstName || clerkUser.fullName || "";
+      const email = data?.email_addresses?.[0]?.email_address ?? "";
+      const name = data?.first_name || data?.last_name 
+        ? `${data?.first_name || ""} ${data?.last_name || ""}`.trim()
+        : "";
 
       await prisma.user.upsert({
         where: { id: userId },
@@ -31,8 +47,17 @@ export async function POST(req: Request) {
       });
     }
 
+    // Handle user.deleted events
+    if (type === "user.deleted") {
+      const userId = data?.id;
+      if (userId) {
+        await prisma.user.delete({ where: { id: userId } }).catch(() => {});
+      }
+    }
+
     return NextResponse.json({ ok: true });
   } catch (err) {
+    console.error("Webhook error:", err);
     return NextResponse.json({ error: "failed" }, { status: 500 });
   }
 }
